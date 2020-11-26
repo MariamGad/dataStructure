@@ -8,6 +8,8 @@
 #define ft first
 #define sc second
 using namespace std;
+// 5 4 3 1 2 , 4 3 1 2 5 , 3 1 2 4 5 , 1 2 3 4 5 
+// swaping every two adjacent elements 
 int n, a[100];
 void bubbleSort(int n)
 {
