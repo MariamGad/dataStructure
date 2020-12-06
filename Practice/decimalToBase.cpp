@@ -16,8 +16,9 @@ string decimalToBase(int num, int base)
     while (num > 0)
     {
         rem = num % base;
+        if (rem >= 10) st.push('A' + (rem - 10));
+        else st.push(rem + '0');
         num /= base;
-        st.push(rem + '0');
     }
     while (!st.empty())
     {
@@ -29,5 +30,7 @@ string decimalToBase(int num, int base)
 int main()
 {
     input;
-    int n,base;
+    int n, base;
+    cin >> n >> base;
+    cout << decimalToBase(n, base);
 }
