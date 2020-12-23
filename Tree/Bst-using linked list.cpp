@@ -27,6 +27,7 @@ bool find(int key)
     }
     return true;
 }
+
 void insert(int key)
 {
     Node* newNode = new Node();
@@ -52,6 +53,7 @@ void insert(int key)
         }
     }
 }
+
 void preOrder(Node* r)
 {
     if (r != NULL)
@@ -61,6 +63,7 @@ void preOrder(Node* r)
         preOrder(r->rightChild);
     }
 }
+
 void inOrder(Node* r)
 {
     if (r != NULL)
@@ -70,6 +73,7 @@ void inOrder(Node* r)
         inOrder(r->rightChild);
     }
 }
+
 void postOrder(Node* r)
 {
     if (r != NULL)
@@ -79,6 +83,41 @@ void postOrder(Node* r)
         cout << r->data << " ";
     }
 }
+
+int maxDepth(Node*root) {
+    if (root == NULL) return -1;
+    else
+    {
+        int l = maxDepth(root->leftChild);
+        int r = maxDepth(root->rightChild);
+        return max(r, l) + 1;
+    }
+}
+
+int minValue()
+{
+    Node* current = root;
+    Node* parent=new Node();
+    while (current != NULL)
+    {
+        parent = current;
+        current = current->leftChild;
+    }
+    return parent->data;
+}
+
+int MaxValue()
+{
+    Node* current = root;
+    Node* parent = new Node;
+    while (current!=NULL)
+    {
+        parent = current;
+        current = current->rightChild;
+    }
+    return parent->data;
+}
+
 int main()
 {
     input;
